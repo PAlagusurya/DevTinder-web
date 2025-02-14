@@ -1,10 +1,15 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { BASE_URL } from "./constants/constants";
+import { BASE_URL } from "../utils/constants";
+import { useDispatch } from "react-redux";
+import { addUser } from "../utils/userSlice";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [emailId, setEmailId] = useState("maeve@gmail.com");
   const [password, setPassword] = useState("Maeve@123");
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleLogin = async () => {
     try {
@@ -16,7 +21,8 @@ const Login = () => {
         },
         { withCredentials: true }
       );
-      console.log("RESPONSE:", res);
+      dispatch(addUser(res.data.data));
+      navigate("/");
     } catch (e) {
       console.error(e);
     }
@@ -41,7 +47,7 @@ const Login = () => {
             </label>
             <label className="form-control w-full max-w-xs my-2">
               <div className="label">
-                <span className="label-text">Password</span>
+                <span className="label-text">Password:</span>
               </div>
               <input
                 type="password"
