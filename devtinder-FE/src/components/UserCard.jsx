@@ -14,6 +14,7 @@ const UserCard = ({ user }) => {
           <p className="font-semibold">{age + ", " + gender}</p>
         )}
         <p className="font-semibold">{about}</p>
+
         <div className="card-actions justify-center my-2">
           <button className="btn bg-red-600 hover:bg-red-800 text-white">
             Ignore
