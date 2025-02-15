@@ -15,8 +15,12 @@ const UserCard = ({ user }) => {
         )}
         <p className="font-semibold">{about}</p>
         <div className="card-actions justify-center my-2">
-          <button className="btn bg-red-600 text-white">Ignore</button>
-          <button className="btn bg-green-600 text-white">Interested</button>
+          <button className="btn bg-red-600 hover:bg-red-800 text-white">
+            Ignore
+          </button>
+          <button className="btn bg-green-600 hover:bg-green-800 text-white">
+            Interested
+          </button>
         </div>
       </div>
     </div>
