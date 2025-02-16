@@ -56,7 +56,7 @@ const Requests = () => {
 
         return (
           <div
-            className="flex mx-auto bg-base-300 rounded-lg justify-between my-4 items-center p-4 w-1/3"
+            className="flex mx-auto bg-base-300 rounded-lg justify-between my-4 items-center p-4 w-2/3"
             key={_id}
           >
             <div>

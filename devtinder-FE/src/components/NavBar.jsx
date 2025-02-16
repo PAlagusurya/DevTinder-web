@@ -22,9 +22,12 @@ const NavBar = () => {
   return (
     <div className="navbar bg-neutral">
       <div className="flex-1">
-        <Link to="/" className="btn text-lg">
+        <button
+          className="btn text-lg"
+          onClick={() => navigate(user ? "/" : "/login")}
+        >
           devTinder
-        </Link>
+        </button>
       </div>
       {user && (
         <div className="flex-none gap-2">
@@ -46,7 +49,6 @@ const NavBar = () => {
               <li>
                 <Link to="/profile" className="justify-between">
                   Profile
-                  <span className="badge">New</span>
                 </Link>
               </li>
               <li>
